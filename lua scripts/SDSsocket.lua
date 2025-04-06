@@ -11,10 +11,11 @@ local futtatas = 0.01
   package.cpath = package.cpath..";"..lfs.currentdir().."/LuaSocket/?.dll"
   xsocket = require("socket")
   xhost = "127.0.0.1"
-  xport = 5336
+  xport = 5335
   x = xsocket.try(xsocket.connect( xhost, xport))
   x:setoption("tcp-nodelay",true)
-
+  
+  
   if x then
     file:write("ok...socket port sikeresen beállítva\n")
     else
@@ -25,17 +26,41 @@ local futtatas = 0.01
 function LuaExportStart()
 
   _G.socket_inhibit = false
+	
+    aircraft  = LoGetObjectById(LoGetPlayerPlaneId()) 
 
-	pcall(function()
-   dofile(lfs.writedir()..[[Scripts\ARC159.lua]])
-	end)
+    if aircraft then
+        if x then
+            xsocket.try(x:send("type=" .. aircraft.Name .. ","))
+            file:write("ok...aircraft name sikeresen beállítva\n")
+			file:write("ok...repült típus: " .. aircraft.Name .. "\n")
+        else
+			file:write("fail...aircraft name valtozót nem sikerült elküldeni\n")
+        end
+	  
+		if aircraft.Name == "Mi-24P" then
+			pcall(function()
+			dofile(lfs.writedir()..[[Scripts\Mi24WP.lua]])  --Mi-24P
+			end)
+		end
+		
+		if aircraft.Name == "F-14B" or aircraft.Name == "F-14A-135-GR" then --F-14A-135-GR
+			pcall(function()
+			dofile(lfs.writedir()..[[Scripts\ARC159.lua]])
+			end)
 
-	pcall(function()
-   dofile(lfs.writedir()..[[Scripts\ARC182.lua]])
-	end)
-  
-  file:write("ok...Panelek Lua scriptjei importálva\n")
-  
+			pcall(function()
+			dofile(lfs.writedir()..[[Scripts\ARC182.lua]])
+			end)
+		end
+
+    else
+		file:write("fail...aircraft változó nem ad vissza értéket\n")
+    end
+	
+	
+	file:write("ok...Panelek Lua scriptjei importálva\n")
+
 end
 
 function LuaExportStop()
@@ -47,29 +72,7 @@ end
 function LuaExportActivityNextEvent(t)
 	local tNext = t
   
-   _G.shared_game_time = tNext   -- Globális változóba mentés
-
-    aircraft  = LoGetObjectById(LoGetPlayerPlaneId()) 
-
-    if aircraft then
-
-      if ( tipus_beallitva == false ) then
-        if x then
-              xsocket.try(x:send("type=" .. aircraft.Name .. ","))
-              file:write("ok...aircraft name sikeresen beállítva\n")
-        else
-          file:write("fail...aircraft name valtozót nem sikerült elküldeni\n")
-        end
-
-        if file then
-          file:write("ok...repült típus: " .. aircraft.Name .. "\n")
-        end
-        tipus_beallitva = true
-      end
-
-    else
-      file:write("fail...aircraft változó nem ad vissza értéket\n")
-    end
+     _G.shared_game_time = tNext   -- Globális változóba mentés
 	
 	tNext = tNext + futtatas
 	return tNext
