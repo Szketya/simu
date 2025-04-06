@@ -1,6 +1,6 @@
 # simu
 
-### Installation Guide for the ARC-159 Panel
+### Installation Guide for SkyDefender Simulations panels
 
 **Step 1: Setting up the `Scripts` folder**
 
@@ -9,7 +9,7 @@
   `C:/Users/(your username)/Saved Games/DCS/Scripts`
 
 - **If you do use such programs:**  
-  1. Only copy the `ARC-159.lua` and `SDSsocket.lua` files into the directory:  
+  1. Only copy the `[YourPanelName].lua` and `SDSsocket.lua` files into the directory:  
      `C:/Users/(your username)/Saved Games/DCS/Scripts`
   2. Navigate to the same directory (`C:/Users/(your username)/Saved Games/DCS/Scripts`) and open the `Export.lua` file in a text editor.  
   3. Add the following code snippet to the **end of the file**:  
@@ -24,8 +24,8 @@
 **Step 2: Configuring the correct COM port**
 
 1. Open the **Device Manager** (search for "Device Manager" in the Start menu).  
-2. Expand the **Ports (COM & LPT)** section and locate the ARC-159 (Arduino Pro Micro).  
-3. Right-click on the ARC-159 entry and select **Properties**.  
+2. Expand the **Ports (COM & LPT)** section and locate the panel (Arduino Pro Micro).  
+3. Right-click on the panel in the Device Manager entry and select **Properties**.  
 4. In the **Port Settings** tab, click the **Advanced** button.  
 5. In the newly opened window, set the COM port number to **COM5** from the dropdown menu (even if COM5 is marked as "in use").  
 
@@ -47,4 +47,4 @@ Start Digital Combat Simulator (DCS) as usual.
 ---
 
 **Step 6: Enjoy the game!**  
-Your ARC-159 panel is now ready to use. Dive into the action and have fun!
+Your SkyDef Sim panel is now ready to use. Dive into the action and have fun!
