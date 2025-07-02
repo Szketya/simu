@@ -11,7 +11,7 @@ local old182Bright = old182Bright or 0
 local old182Function = old182Function or 0
 local test182 = 0
 local blokkolas = false
-local last_run_time = 0.2
+local last_run_time = 0.3
 local old_formatted_freq_182 = ""
 local file
 
