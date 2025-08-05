@@ -17,6 +17,7 @@
      pcall(function()
          dofile(lfs.writedir()..[[Scripts\SDSsocket.lua]])
      end)
+  4. If you use WinWing software, make sure that the option "Close the modification of Export.lua file" is checked, so that WinWing doesn’t overwrite your changes to Export.lua.
     
 
 ---
@@ -27,7 +28,7 @@
 2. Expand the **Ports (COM & LPT)** section and locate the panel (Arduino Pro Micro).  
 3. Right-click on the panel in the Device Manager entry and select **Properties**.  
 4. In the **Port Settings** tab, click the **Advanced** button.  
-5. In the newly opened window, set the COM port number to **COM5** from the dropdown menu (even if COM5 is marked as "in use").  
+5. In the newly opened window, set the COM port number to **COM6** from the dropdown menu (even if COM6 is marked as "in use").  
 
 ---
 

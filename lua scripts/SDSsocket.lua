@@ -11,7 +11,7 @@ local futtatas = 0.01
   package.cpath = package.cpath..";"..lfs.currentdir().."/LuaSocket/?.dll"
   xsocket = require("socket")
   xhost = "127.0.0.1"
-  xport = 5335
+  xport = 5336
   x = xsocket.try(xsocket.connect( xhost, xport))
   x:setoption("tcp-nodelay",true)
   
