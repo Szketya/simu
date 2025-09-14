@@ -49,3 +49,46 @@ Start Digital Combat Simulator (DCS) as usual.
 
 **Step 6: Enjoy the game!**  
 Your SkyDef Sim panel is now ready to use. Dive into the action and have fun!
+
+
+
+## FAQ
+
+### Issue:  
+You receive a **"COM port refused"** error message, or the panel conflicts with another device using **COM6**.  
+
+### Solution:  
+1. Open the **SDSsocket.lua** file with any text editor.  
+   - Find the line:  
+     ```lua
+     xport = 5336
+     ```  
+   - Change it to:  
+     ```lua
+     xport = 5335
+     ```  
+   - Save the file.
+
+2. Open the **server.cfg** file with a text editor and replace its contents with the following:  
+
+   ```ini
+   # Comm ports used
+   comm_ports=5
+
+   # Default settings
+   comm_baud=230400
+   comm_databits=8
+   comm_stopbits=1
+   comm_parity=none
+
+   # Idle time out in seconds
+   timeout=300000
+
+   # Port 5 settings
+   net_port5=5335
+
+3. In Device Manager, change the panel’s COM port from COM6 to COM5.
+
+Following the above example, make sure to assign the panel to a COM port that is not already in use by another device.
+
+After completing these steps, the panel should work without conflicts on the new COM port.
