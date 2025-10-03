@@ -51,6 +51,21 @@ Start Digital Combat Simulator (DCS) as usual.
 Your SkyDef Sim panel is now ready to use. Dive into the action and have fun!
 
 
+## Notes for Mi-24 Weapon Panel users
+
+For the proper operation of the switch covers, you need to manually bind the following keys in DCS:
+
+| Function                                 | Device       | Button    |
+|------------------------------------------|--------------|-----------|
+| Emergency Release Launchers Switch       | Weapon Panel | JOY_BTN21 |
+| Emergency Release Launchers Switch Cover | Weapon Panel | JOY_BTN47 |
+| Emergency Release Stores Switch          | Weapon Panel | JOY_BTN33 |
+| Emergency Release Stores Switch Cover    | Weapon Panel | JOY_BTN46 |
+| Explosion on Jettison Switch - OFF       | Weapon Panel | JOY_BTN45 |
+| Explosion on Jettison Switch - ON        | Weapon Panel | JOY_BTN32 |
+| Explosion on Jettison Switch Cover - UP/DOWN | Weapon Panel | JOY_BTN42 |
+
+
 
 ## FAQ
 
