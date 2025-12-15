@@ -50,6 +50,33 @@ Start Digital Combat Simulator (DCS) as usual.
 **Step 6: Enjoy the game!**  
 Your SkyDef Sim panel is now ready to use. Dive into the action and have fun!
 
+## Notes for F-14 Tacan Panel users
+
+Some control bindings are currently missing from the Controls menu. This issue has been reported to Heatblur (HB), and their feedback indicates that it will be fixed in an upcoming update. This includes the TACAN channel selector.
+
+As a temporary workaround, the TACAN selector has been implemented using a Lua script.
+
+In this case, the following key bindings must be set manually in the Controls menu:
+
+TACAN selector tens decrease: 26
+
+TACAN selector tens increase: 27
+
+TACAN selector ones decrease: 43
+
+TACAN selector ones increase: 44
+
+Once HB fixes the issue, open F14TacanPanel.lua in a text editor (Notepad++ is recommended) and modify the first line:
+
+local ButtonsNotUpdated = 1
+
+
+Change it to:
+
+local ButtonsNotUpdated = 0
+
+
+This will disable the temporary workaround script.
 
 ## Notes for Mi-24 Weapon Panel users
 
