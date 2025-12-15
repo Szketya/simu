@@ -52,6 +52,14 @@ function LuaExportStart()
 			pcall(function()
 			dofile(lfs.writedir()..[[Scripts\ARC182.lua]])
 			end)
+			
+			pcall(function()
+			dofile(lfs.writedir()..[[Scripts\F14TacanPanel.lua]])
+			end)
+			
+			pcall(function()
+			dofile(lfs.writedir()..[[Scripts\F14VolumeAndTacanCMDpanel.lua]])
+			end)
 		end
 
     else
